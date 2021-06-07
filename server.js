@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const drinks = require(`./models/drinks`);
+const food = require('./models/food')
 
 // ========Routes===========//
 app.get("/", (req, res)=>{
@@ -14,6 +15,11 @@ app.get("/drinks/", (req, res)=>{
     })
 });
 
+app.get("/food/", (req, res)=>{
+    res.render(`food_index.ejs`, {
+        food
+    })
+});
 // ========Show Routes========//
 app.get("/drinks/:id", (req, res)=>{
     res.render('drinks_show.ejs',
@@ -22,6 +28,12 @@ app.get("/drinks/:id", (req, res)=>{
     })
 });
 
+app.get("/food/:id", (req, res)=>{
+    res.render('food_show.ejs',
+    {
+        food: food[req.params.id]
+    })
+});
 // ========Web Server========//
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
