@@ -14,6 +14,11 @@ app.get("/drinks", (req, res)=>{
     })
 });
 
+// ========Show Routes========//
+app.get("/drinks/:id", (req, res)=>{
+    res.send(req.params.id)
+});
+
 // ========Web Server========//
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
