@@ -20,16 +20,10 @@
 <body>
     <h1>At foo bar</h1>
     <h2><%= drink.name%> </h2>
-    <img scr="<%= drink.image %> " alt= "drink.image">
+    <img src="<%= drink.image %> " alt= "drink.image">
+
     <h3><%= drink.price %> </h3>
     <a href="/drinks">Go Back</a>
-    <!-- <ul>
-        <% for(let i = 0; i < allDrinks.length; i++) { %>
-            <li id='drinks'>
-                <a href="/drinks/<%=i%>"><%=allDrinks[i].name.charAt(0).toUpperCase() + allDrinks[i].name.slice(1) %></a>
-            </li>
-            <br>
-        <% } %>
-    </ul> -->
+   
 </body>
 </html>
